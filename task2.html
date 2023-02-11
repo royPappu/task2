@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=T, initial-scale=1.0">
+    <title>Task2</title>
+    <link rel="stylesheet" href="task2.css">
+</head>
+<body>
+    <div id="task2" display="flex"></div>
+    <button id="changecolor">Change colour</button>
+    <button id="addchild">ADD Child</button>
+    <button id="removechild">Remove Child</button>
+    <script>
+const task=document.getElementById("task2")
+const button1=document.getElementById("changecolor")
+const button2=document.getElementById("addchild")
+const button3=document.getElementById("removechild")
+let color=["violet","blue","pink","gold","white","silver","yellow"]
+button1.addEventListener("click",changecolor)
+function changecolor(){
+    let backend= Math.floor(Math.random()*10)
+    task.style.backgroundColor=color[backend]
+    console.log(backend)
+}
+button2.addEventListener("click",addChild)
+
+function addChild(){
+    let rectbox=document.createElement("div")
+   
+    rectbox.style.border="1px solid blue"
+    rectbox.style.width="100px"
+    rectbox.style.height="50px"
+    rectbox.style.margin="20px"
+    rectbox.style.backgroundColor="black"
+   
+    
+
+task.appendChild(rectbox)
+}
+
+button3.addEventListener("click",removeChild)
+
+function removeChild(){
+   
+    task.removeChild(task.lastElementChild)
+
+   
+}
+    </script>
+</body>
+</html>
